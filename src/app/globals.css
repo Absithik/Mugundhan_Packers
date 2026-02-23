@@ -1,26 +1,110 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-primary: #001A4D;
+  /* Navy Blue from Logo */
+  --color-accent: #FFB800;
+  /* Golden Yellow from Logo */
+  --color-secondary: #003399;
+  /* Lighter Navy */
+  --color-info: #0055FF;
+  --color-background: #FFFFFF;
+  --color-glass: rgba(255, 255, 255, 0.8);
+  --color-glass-dark: rgba(0, 0, 0, 0.1);
+
+  --font-heading: "Outfit", sans-serif;
+  --font-body: "Poppins", sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+:root {
+  --foreground: #001A4D;
+  --background: #FFFFFF;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #020617;
+    --foreground: #f8fafc;
   }
 }
 
+html {
+  scroll-behavior: initial !important;
+  /* Managed by Lenis */
+}
+
 body {
-  background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--background);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* GSAP/Lenis Smooth Scroll Classes */
+.lenis.lenis-smooth {
+  height: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Anime Style Utilities */
+.anime-sticker {
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.anime-sticker:hover {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.glass-card {
+  background: var(--color-glass) !important;
+  backdrop-filter: blur(16px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.4) !important;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07) !important;
+}
+
+.bg-grainy {
+  position: fixed;
+  inset: 0;
+  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 100;
+}
+
+.text-stroke {
+  -webkit-text-stroke: 2px var(--color-primary);
+  color: transparent;
+}
+
+.delivery-path {
+  stroke-dasharray: 10;
+  animation: dash 5s linear infinite;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: -100;
+  }
+}
+
+.font-heading {
+  font-family: var(--font-outfit) !important;
+}
+
+.font-body {
+  font-family: var(--font-poppins) !important;
 }
