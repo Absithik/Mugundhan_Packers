@@ -2,12 +2,15 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Phone, Menu, X, Truck } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Header = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const pathname = usePathname();
+    const isHome = pathname === '/';
 
     useEffect(() => {
         const handleScroll = () => {
@@ -48,7 +51,8 @@ const Header = () => {
                             <Link
                                 key={link.name}
                                 href={link.href}
-                                className="text-sm font-bold text-primary/70 hover:text-accent transition-colors relative group uppercase tracking-widest"
+                                className={`text-sm font-black transition-all duration-300 relative group uppercase tracking-widest ${isScrolled || isHome ? 'text-primary' : 'text-white'
+                                    } hover:text-accent`}
                             >
                                 {link.name}
                                 <motion.span
@@ -57,19 +61,35 @@ const Header = () => {
                                 />
                             </Link>
                         ))}
-                        <div className="h-4 w-px bg-primary/10" />
-                        <a href="tel:+919876543210" className="flex items-center gap-2 text-primary font-black hover:scale-105 transition-transform">
-                            <Phone size={18} className="text-accent" />
-                            <span>+91 98765 43210</span>
-                        </a>
-                        <button className="bg-primary text-white px-6 py-3 rounded-xl font-bold hover:bg-primary/90 hover:scale-105 active:scale-95 transition-all shadow-lg shadow-primary/10">
-                            Book Now
-                        </button>
+                        <div className={`h-4 w-px ${isScrolled || isHome ? 'bg-primary/10' : 'bg-white/20'}`} />
+                        <div className="flex flex-col items-end">
+                            <a
+                                href="tel:+919876543210"
+                                className={`flex items-center gap-2 font-black transition-transform hover:scale-105 ${isScrolled || isHome ? 'text-primary' : 'text-white'}`}
+                            >
+                                <Phone size={16} className="text-secondary" />
+                                <span className="text-sm">+91 98765 43210</span>
+                            </a>
+                            <a
+                                href="https://wa.me/919876543210"
+                                className="flex items-center gap-1 text-[10px] font-bold text-green-500 hover:text-green-600 transition-colors"
+                            >
+                                <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse" />
+                                WhatsApp Chat
+                            </a>
+                        </div>
+                        <Link
+                            href="https://wa.me/919876543210"
+                            className="bg-secondary text-white px-6 py-3 rounded-xl font-bold hover:bg-secondary/90 hover:scale-105 active:scale-95 transition-all shadow-lg shadow-secondary/10 text-sm"
+                        >
+                            Get Free Quote
+                        </Link>
                     </nav>
 
                     {/* Mobile Toggle */}
                     <button
-                        className="lg:hidden text-primary p-2 bg-primary/5 rounded-xl"
+                        className={`lg:hidden p-2 rounded-xl transition-colors ${isScrolled || isHome ? 'text-primary bg-primary/5' : 'text-white bg-white/10'
+                            }`}
                         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                     >
                         {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}

@@ -39,11 +39,17 @@ const Footer = () => {
                     <div className="space-y-8">
                         <h4 className="text-xl font-black font-heading tracking-tight italic">NAVIGATION</h4>
                         <ul className="space-y-4">
-                            {['Home', 'About Us', 'Services', 'Branches', 'Contact'].map(link => (
-                                <li key={link}>
-                                    <Link href="#" className="text-white/60 hover:text-white font-bold transition-colors flex items-center gap-2 group">
+                            {[
+                                { name: 'Home', href: '/' },
+                                { name: 'About Us', href: '/about' },
+                                { name: 'Services', href: '/services' },
+                                { name: 'Branches', href: '/branches' },
+                                { name: 'Contact', href: '/contact' }
+                            ].map(link => (
+                                <li key={link.name}>
+                                    <Link href={link.href} className="text-white/60 hover:text-white font-bold transition-colors flex items-center gap-2 group">
                                         <ArrowRight size={14} className="text-accent group-hover:translate-x-1 transition-transform" />
-                                        {link}
+                                        {link.name}
                                     </Link>
                                 </li>
                             ))}
@@ -51,13 +57,19 @@ const Footer = () => {
                     </div>
 
                     <div className="space-y-8">
-                        <h4 className="text-xl font-black font-heading tracking-tight italic">QUICK LINKS</h4>
+                        <h4 className="text-xl font-black font-heading tracking-tight italic">SERVICE AREAS</h4>
                         <ul className="space-y-4">
-                            {['Privacy Policy', 'Terms of Service', 'Support Center', 'Track Order'].map(link => (
-                                <li key={link}>
-                                    <Link href="#" className="text-white/60 hover:text-white font-bold transition-colors flex items-center gap-2 group">
+                            {[
+                                { name: 'Salem (Fairlands)', href: '/branches' },
+                                { name: 'Namakkal', href: '/packers-and-movers-in-namakkal' },
+                                { name: 'Erode', href: '/packers-and-movers-in-erode' },
+                                { name: 'Dharmapuri', href: '/branches' },
+                                { name: 'Chennai', href: '/branches' }
+                            ].map(link => (
+                                <li key={link.name}>
+                                    <Link href={link.href} className="text-white/60 hover:text-white font-bold transition-colors flex items-center gap-2 group">
                                         <ArrowRight size={14} className="text-accent group-hover:translate-x-1 transition-transform" />
-                                        {link}
+                                        {link.name}
                                     </Link>
                                 </li>
                             ))}
@@ -65,13 +77,13 @@ const Footer = () => {
                     </div>
 
                     <div className="space-y-8">
-                        <h4 className="text-xl font-black font-heading tracking-tight italic">HEADQUARTERS</h4>
+                        <h4 className="text-xl font-black font-heading tracking-tight italic">SALEM HEADQUARTERS</h4>
                         <div className="space-y-6">
                             <div className="flex gap-4">
                                 <MapPin className="text-accent shrink-0" />
                                 <p className="text-white/60 font-bold leading-relaxed">
-                                    Anna Salai, T. Nagar, <br />
-                                    Chennai, Tamil Nadu 600017
+                                    Fairlands, Main Road, <br />
+                                    Salem, Tamil Nadu 636016
                                 </p>
                             </div>
                             <a href="tel:+919876543210" className="flex gap-4 items-center group">
@@ -87,7 +99,7 @@ const Footer = () => {
                 </div>
 
                 <div className="pt-10 border-t border-white/5 text-center text-white/40 text-sm font-bold">
-                    © {new Date().getFullYear()} Mugunthan Packers & Movers. Reimagined by NK Modern Technology.
+                    © {new Date().getFullYear()} Mugunthan Packers & Movers. Best Packers and Movers in Salem. Reimagined by NK Modern Technology.
                 </div>
             </div>
         </footer>

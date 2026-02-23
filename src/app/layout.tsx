@@ -7,6 +7,7 @@ import SmoothScrollProvider from "@/components/providers/SmoothScroll";
 import PageTransition from "@/components/providers/PageTransition";
 import CustomCursor from "@/components/ui/CustomCursor";
 import { AnimeStickers } from "@/components/ui/AnimeStickers";
+import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -21,9 +22,51 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Mugunthan Packers & Movers | Anime Logistics Reimagined",
-  description: "Experience the fastest, most playful relocation service in India. Anime-inspired, tech-driven, and purely professional packers and movers.",
+  title: "Mugunthan Packers & Movers | Professional Shifting Services",
+  description: "Reliable and fast packers and movers services in Salem, Tamil Nadu. We offer house shifting, office relocation, and vehicle transport services.",
+  alternates: {
+    canonical: 'https://mugunthanpackers.com',
+  },
 };
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Mugunthan Packers & Movers",
+  "image": "https://mugunthanpackers.com/assets/mugundhan_logo.png",
+  "@id": "https://mugunthanpackers.com",
+  "url": "https://mugunthanpackers.com",
+  "telephone": "+919876543210",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Fairlands",
+    "addressLocality": "Salem",
+    "addressRegion": "TN",
+    "postalCode": "636016",
+    "addressCountry": "IN"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 11.6643,
+    "longitude": 78.1460
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday"
+    ],
+    "opens": "00:00",
+    "closes": "23:59"
+  }
+};
+
+
 
 export default function RootLayout({
   children,
@@ -31,8 +74,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${poppins.variable} ${outfit.variable} scroll-smooth`}>
-      <body className="font-body bg-background text-primary min-h-screen antialiased selection:bg-accent selection:text-white relative overflow-x-hidden">
+    <html lang="en" className={`${poppins.variable} ${outfit.variable} scroll-smooth`} suppressHydrationWarning>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <BreadcrumbSchema />
+      </head>
+      <body className="font-body bg-background text-primary min-h-screen antialiased selection:bg-accent selection:text-white relative overflow-x-hidden" suppressHydrationWarning>
         <div className="fixed inset-0 bg-grainy pointer-events-none z-[100]" />
 
         {/* Brand Background Gradients */}
