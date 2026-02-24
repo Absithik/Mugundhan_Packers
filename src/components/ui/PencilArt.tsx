@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 const defaultTransition = {
     duration: 2,
     ease: "easeInOut",
-};
+} as const;
 
 interface PencilArtProps {
     className?: string;
