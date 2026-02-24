@@ -9,7 +9,7 @@ export const ContactContent = () => {
         name: '',
         phone: '',
         email: '',
-        service: 'Household Shifting',
+        service: 'Shifting',
         message: ''
     });
 
@@ -84,10 +84,10 @@ export const ContactContent = () => {
                                         className="w-full bg-white border-2 border-primary/5 rounded-2xl px-6 py-4 focus:border-accent outline-none transition-all font-bold appearance-none cursor-pointer"
                                         onChange={(e) => setFormData({ ...formData, service: e.target.value })}
                                     >
-                                        <option>Household Shifting</option>
-                                        <option>Office Relocation</option>
-                                        <option>Vehicle Transport</option>
-                                        <option>Warehousing</option>
+                                        <option>Shifting</option>
+                                        <option>Packing</option>
+                                        <option>Loading & Unloading</option>
+                                        <option>Transport</option>
                                     </select>
                                 </div>
 

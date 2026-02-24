@@ -1,10 +1,14 @@
-import { Home } from 'lucide-react';
+import { Truck } from 'lucide-react';
 
 export const HERO_CONTENT = {
-    icon: Home,
+    icon: Truck,
     title: {
-        main: "Seamless ",
-        highlight: "Shifting."
+        main: "Safe & Secure ",
+        highlight: "Shifting Services"
     },
-    description: "Relocating your home or office is now a weekend leisure activity."
+    description: "Experience a stress-free transition with India's most trusted relocation experts. We handle your belongings with the care they deserve.",
+    ctas: {
+        primary: { label: "Get Free Quote", href: "#quote-form" },
+        secondary: { label: "Call Now", href: "tel:+919876543210" }
+    }
 };

@@ -1,10 +1,25 @@
-import { Package } from 'lucide-react';
+import { ShieldCheck, Phone, ArrowRight } from 'lucide-react';
 
 export const HERO_CONTENT = {
-    icon: Package,
-    title: {
-        main: "Scientific ",
-        highlight: "Packing."
+    badge: {
+        icon: ShieldCheck,
+        text: "Premium Packing Protocol"
     },
-    description: "Because the safety of your move starts with the quality of the box."
+    title: {
+        main: "Professional ",
+        highlight: "Packing Services."
+    },
+    description: "Maximum protection for your valuables using 5-layer scientific packing materials and trained handling experts.",
+    ctas: {
+        primary: {
+            label: "Get Free Quote",
+            href: "#quote",
+            icon: ArrowRight
+        },
+        secondary: {
+            label: "Call for Quote",
+            href: "tel:+919842735706",
+            icon: Phone
+        }
+    }
 };

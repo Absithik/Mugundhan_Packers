@@ -5,32 +5,32 @@ import Link from 'next/link';
 
 const services = [
     {
-        title: "Premium Packing Services",
+        title: "Shifting Solutions",
+        slug: "shifting",
+        desc: "Tailored relocation plans with dedicated moving managers to ensure zero downtime and maximum care for home and office moves.",
+        icon: <Home size={40} />,
+        features: ["Local & Domestic Shifting", "Furniture Dismantling", "IT Equipment Moving", "Post-Move Setup"]
+    },
+    {
+        title: "Premium Packing",
         slug: "packing",
-        desc: "Scientific packing using multi-layered honey-comb materials and reinforced crates for absolute safety.",
+        desc: "Scientific packing using multi-layered honey-comb materials and reinforced crates for absolute safety during transit.",
         icon: <Package size={40} />,
         features: ["Fragile Item Handling", "Waterproof Packing", "Wooden Crating", "Custom Box Sizing"]
     },
     {
-        title: "Home & Office Shifting",
-        slug: "shifting",
-        desc: "Tailored relocation plans with dedicated moving managers to ensure zero downtime and maximum care.",
-        icon: <Home size={40} />,
-        features: ["Local & Domestic", "Furniture Dismantling", "IT Equipment Moving", "Post-Move Setup"]
+        title: "Loading & Unloading",
+        slug: "loading-unloading",
+        desc: "Professional handling of your belongings with specialized equipment to ensure safe loading and unloading processes.",
+        icon: <MapPin size={40} />,
+        features: ["Expert Handling", "Safety Equipment", "Trained Professionals", "Damage-Free Promise"]
     },
     {
-        title: "National Transportation",
+        title: "National Transport",
         slug: "transport",
-        desc: "Specialized fleet of closed-containers equipped with GPS and air-suspension for smooth transport.",
+        desc: "Specialized fleet of closed-containers equipped with GPS and air-suspension for smooth transport across India.",
         icon: <Truck size={40} />,
         features: ["Bikes & Car Transport", "Real-time Tracking", "ISO Certified Fleet", "Insurance Included"]
-    },
-    {
-        title: "Industrial Warehousing",
-        slug: "warehouse",
-        desc: "State-of-the-art storage facilities with 24/7 surveillance and climate control systems.",
-        icon: <Warehouse size={40} />,
-        features: ["Short-term Storage", "Inventory Management", "Secure Access", "Fire Safety Systems"]
     }
 ];
 

@@ -1,10 +1,25 @@
-import { Truck } from 'lucide-react';
+import { MapPin, Phone, ArrowRight } from 'lucide-react';
 
 export const HERO_CONTENT = {
-    icon: Truck,
-    title: {
-        main: "Fleet ",
-        highlight: "Excellence."
+    badge: {
+        icon: MapPin,
+        text: "Real-Time GPS Tracking Enabled"
     },
-    description: "Our tech-enabled specialized containers are the safest rooms on wheels."
+    title: {
+        main: "Safe & Reliable ",
+        highlight: "Transport."
+    },
+    description: "Premium fleet of tech-enabled vehicles for seamless inter-city and local relocation with 100% on-time delivery guarantee.",
+    ctas: {
+        primary: {
+            label: "Get Quick Quote",
+            href: "#quote",
+            icon: ArrowRight
+        },
+        secondary: {
+            label: "Call Operations",
+            href: "tel:+919842735706",
+            icon: Phone
+        }
+    }
 };

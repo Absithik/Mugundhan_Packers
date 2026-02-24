@@ -12,9 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         '/services/packing',
         '/services/shifting',
         '/services/transport',
-        '/services/warehouse',
-        '/services/house-shifting-salem',
-        '/services/office-relocation-salem',
+        '/services/loading-unloading',
 
     ];
 

@@ -1,9 +1,39 @@
 export const PROCESS_CONTENT = {
-    title: "The 4-Layer Packing Shield.",
+    title: {
+        main: "Our Scientific ",
+        highlight: "Process."
+    },
+    description: "A calculated, multi-step approach to ensure your belongings stay protected throughout the journey.",
     steps: [
-        { step: "01", title: "Soft Wrap", desc: "Anti-static foam or butter paper for the primary surface protection." },
-        { step: "02", title: "Bubble Guard", desc: "High-density bubble wrap to absorb vibration and impact during transit." },
-        { step: "03", title: "Corrugated Seal", desc: "5-ply heavy duty cardboard sheets to prevent external pressure or piercing." },
-        { step: "04", title: "Shrink & Strap", desc: "Final industrial shrink wrapping to lock everything in place and prevent moisture." }
+        {
+            number: "01",
+            title: "Layered Wrap",
+            desc: "Primary surface protection using anti-static foam or soft butter paper for delicate finishes.",
+            icon: "Shield"
+        },
+        {
+            number: "02",
+            title: "Bubble Armor",
+            desc: "High-density industrial bubble wrap to absorb vibration and mechanical impact.",
+            icon: "Box"
+        },
+        {
+            number: "03",
+            title: "Corrugated Shell",
+            desc: "Placement in 5-ply heavy duty cardboard boxes for external structural integrity.",
+            icon: "Layers"
+        },
+        {
+            number: "04",
+            title: "Edge Shielding",
+            desc: "Reinforced corrugated edge protectors to prevent chips and scratches on corners.",
+            icon: "Maximize"
+        },
+        {
+            number: "05",
+            title: "Final Seal",
+            desc: "Industrial shrink wrapping and heavy-duty taping for moisture and dust protection.",
+            icon: "Lock"
+        }
     ]
 };

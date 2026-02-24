@@ -1,38 +1,56 @@
-import type { Metadata } from 'next';
+import React from 'react';
+import { Metadata } from 'next';
 import { HeroSection } from '@/components/sections/transport/HeroSection';
-import { FeaturesSection } from '@/components/sections/transport/FeaturesSection';
-import { VehicleSection } from '@/components/sections/transport/VehicleSection';
+import { TypesSection } from '@/components/sections/transport/TypesSection';
+import { FleetSection } from '@/components/sections/transport/FleetSection';
+import { SafetySection } from '@/components/sections/transport/SafetySection';
+import { ProcessSection } from '@/components/sections/transport/ProcessSection';
+import { WhyChooseSection } from '@/components/sections/transport/WhyChooseSection';
+import { QuoteFormSection } from '@/components/sections/transport/QuoteFormSection';
+import { FAQSection } from '@/components/sections/transport/FAQSection';
+import { CTASection } from '@/components/sections/transport/CTASection';
 
 export const metadata: Metadata = {
-    title: "Safe Vehicle Transport Salem | Bike & Car Shifting",
-    description: "Secure car and bike transport services in Salem. We provide door-to-door vehicle relocation from Salem to anywhere in India. Insured and safe transit.",
+    title: 'Safe & Reliable Transport Services | GPS Tracked | Mugundhan Packers',
+    description: 'Tech-enabled transport services with real-time GPS tracking. Specialized fleet for local and inter-city relocation. 100% on-time delivery guarantee.',
 };
 
-const serviceSchema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Safe Vehicle Transport Salem",
-    "description": "Secure car and bike transport services in Salem. Door-to-door vehicle relocation from Salem to anywhere in India.",
-    "provider": {
-        "@type": "LocalBusiness",
-        "name": "Mugunthan Packers & Movers"
-    },
-    "areaServed": {
-        "@type": "State",
-        "name": "Tamil Nadu"
-    }
-};
+export default function TransportServicesPage() {
+    const serviceSchema = {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Professional Transport Services",
+        "provider": {
+            "@type": "LocalBusiness",
+            "name": "Mugundhan Packers & Movers"
+        },
+        "description": "Premium tech-enabled transport solutions with GPS tracking for local and long-distance moves.",
+        "areaServed": "India",
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Transport Services",
+            "itemListElement": [
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Inter-City Hauling" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Local Transport" } }
+            ]
+        }
+    };
 
-export default function TransportPage() {
     return (
-        <div className="bg-white">
+        <main className="min-h-screen bg-white">
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
             />
             <HeroSection />
-            <FeaturesSection />
-            <VehicleSection />
-        </div>
+            <TypesSection />
+            <FleetSection />
+            <SafetySection />
+            <ProcessSection />
+            <WhyChooseSection />
+            <QuoteFormSection />
+            <FAQSection />
+            <CTASection />
+        </main>
     );
 }
